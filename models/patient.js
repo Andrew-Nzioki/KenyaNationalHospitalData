@@ -9,6 +9,7 @@ const patientSchema = new mongoose.Schema({
   hospitalName: String,
   Ownership: String,
   createdAt:Date.now(),
+  DiedIn:{type:Boolean,required:true},
   Hospital: {
     type: String,
     enum: {
