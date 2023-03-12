@@ -1,10 +1,15 @@
+
+const Patient = require("../models/patient")
+
 //get all the patients in the database
-const getAllpatients=(req,res)=>{
-  res.status(200).json({msg:'get all the patients'})
+const getAllpatients=async(req,res)=>{
+  const patients= await patient.find({})
+  res.status(200).json({patients})
 }
 //get a single patient from the database
-const getPatient=(req,res)=>{
-  res.status(200).json({msg:'get a single patient'})
+const getPatient=async(req,res)=>{
+  const patient=await Patient.findById({})
+  res.status(200).json({patient})
 }
 const deletePatient=(req,res)=>{
   res.status(200).json({msg:'delete a single patient'})
